@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FONT AWESOME ===============-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <title>Ecommerce Website</title>
+  </head>
+  <body>
+    <!--=============== MAIN ===============-->
+    <main class="main">
+        <!--=============== Message ===============-->
+        <section class="section__popup">
+          <button class="show-modal">Show Modal</button>
+          <span class="overlay"></span>
+          <div class="modal-box">
+              <i class="fa-regular fa-circle-check"></i>
+              <!-- <h2>Completed</h2> -->
+              <h3>Registration successful,
+                  please check your email to complete your registration.</h3>
+              <button class="close-btn btn">Ok</button>
+          </div>
+      </section>
+    </main>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      const section = document.querySelector(".section__popup"),
+              overlay = document.querySelector(".overlay"),
+              showBtn = document.querySelector(".show-modal"),
+              closeBtn = document.querySelector(".close-btn");
+      showBtn.addEventListener("click", () => section.classList.add("active-popup"));
+      overlay.addEventListener("click", () =>
+              section.classList.remove("active-popup")
+      );
+      closeBtn.addEventListener("click", () =>
+              section.classList.remove("active-popup")
+      );
+    </script>
+  </body>
+</html>
